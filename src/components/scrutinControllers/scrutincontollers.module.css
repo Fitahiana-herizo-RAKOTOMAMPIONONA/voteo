@@ -1,0 +1,15 @@
+.imageCandidat{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.pdpCandidat{
+    width: 100px;
+    object-fit: cover;
+}
+.infoCandidat{
+    overflow: scroll;
+    background-color: red;
+    display: none;
+}

@@ -1,0 +1,68 @@
+.listeNav{
+    display: flex;
+}
+.listeNav.active{
+    display: block;
+    position: absolute;
+}
+.imagePhotoProfil{
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* .NavBar{
+position: sticky;
+align-items: center;
+width: 100%;
+} */
+/* .NavBar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: red;
+} */
+.deroulant{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--second);
+    color:var(--primary);
+    background:var(--second);
+    color:var(--primary);
+    padding: 10px 0px;
+    transition: all .5s;
+    height: 30px;
+}
+.deroulant.active{
+    transition: all .5s;
+    display:block;
+    height: 100vh;
+}
+.bouttonMenu{
+    position: absolute;
+    right: 10px;
+    padding: 10px 0px;
+}
+@media screen and (max-width: 600px){
+    .reseauNavBar{
+        display: none;
+        flex: 0;
+    }
+    .listeNav{
+        display: none;
+        transition: all .2s;
+    }
+    .listeNav.active{
+        display: block;
+        position: absolute;
+        margin: auto;
+        transition: all .3s;
+    }
+}

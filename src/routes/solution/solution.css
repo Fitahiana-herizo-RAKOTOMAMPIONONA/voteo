@@ -1,0 +1,28 @@
+/* .boutton{
+    background-color: "var(--second)";
+    color: "var(--primary)";
+    border-radius:"60px";
+    height: "100%";
+    width:"40px";
+    position: "absolute";
+    left:0;
+    top:0;
+    padding:"auto";
+} */
+.boutton:hover .icone-Envoyer{
+    position: absolute;
+    right: 0;
+}
+/* .boutton:hover {
+    background-color: var(--second);
+} */
+.maskSolution{
+    background: linear-gradient(transparent,rgba(0, 0, 0, 0.800), rgb(0, 0, 0))
+}
+.photoSolutionComponent{
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}

@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgb(14, 68, 119) */
+  /* background: linear-gradient( transparent , black ,transparent); */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@font-face {
+  font-family: "nexa1";
+  src: url("./assets/font/nexa/NexaRustSans-Trial-Black2.woff");
+}
+@font-face {
+  font-family: "unigeo";
+  src: url("./assets/font/unigeo/Unigeo64-Semibold-trial.ttf");
+}
+@font-face {
+  font-family: "unigeo2";
+  src: url("./assets/font/unigeo/Unigeo64-Regular-trial.ttf");
+}
+@font-face {
+  font-family: "unigeo3";
+  src: url("./assets/font/unigeo/Unigeo64-Medium-trial.ttf");
+}

@@ -1,0 +1,13 @@
+.imagePersonne{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:"7px";
+    color: #6a6a6a;
+    /* color: #7f7f7f; */
+}
+.pdpTeam{
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--second);
+}

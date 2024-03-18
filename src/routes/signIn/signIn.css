@@ -1,0 +1,11 @@
+.champInput{
+    width: 100%;
+    border-radius: 2px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: 2px var(--thirst) solid;
+    margin-bottom: 10px;
+}
+.champInput:focus{
+    padding-left: 10px;
+}

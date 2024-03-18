@@ -1,0 +1,57 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: "unigeo3"; */
+    /* color: var(--second); */
+}
+:root{
+    --primary : #ffffff ;
+    --second : #091856;
+    --thirst : #3d5af0;
+    --four: #000000;
+    --claire : #656565a3 ;
+    --claire : #5a370cba;
+}
+
+ul{
+    list-style: none;
+    align-items: safe;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.pdp{
+    height: 100%;
+    object-fit: cover;
+}
+.App{
+   max-width: 1400px;
+   position: relative;
+   margin: auto;
+   width: 100%;
+}
+::-webkit-scrollbar{
+    margin-right: 10px;
+    width: 7px;
+    background-color: rgb(187, 187, 187);
+}
+::-webkit-scrollbar-thumb{
+    width: 7px;
+    background-color: rgb(24, 5, 59);
+    border-radius: 7px;
+}
+.infoCandidat{
+    overflow-y: scroll;
+}
+.infoCandidat::-webkit-scrollbar{
+    margin-right: 10px;
+    width: 7px;
+    background-color: rgb(255, 255, 255);
+}
+/* @media screen and (max-width: 1461px) {
+    .App{
+        max-width: 1200px;
+    }
+} */
