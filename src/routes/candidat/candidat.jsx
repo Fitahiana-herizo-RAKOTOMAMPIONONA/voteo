@@ -2,6 +2,8 @@ import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CandidatCard } from "../../components/scrutinControllers/scrutinController";
 import axios from "axios";
+import {Button} from "@mui/material"
+
 function CandidatPage(){
     const [configScrutin, setConfigScrutin]= useState({
         nom: "",
@@ -19,6 +21,7 @@ function CandidatPage(){
             // localStorage.removeItem("configScrutin")
         }
     },[])
+    //const [candidat,setCandidat] =useState()
     const [candidat,setCandidat]=useState(Array.from({length : configScrutin.nombreCandidat},(  )=>({pdp :"", nom: "",prenom: "",date : "" , profession :""})))
     console.log(candidat);
     const EnvoyerRequette =async ()=>{
@@ -29,8 +32,7 @@ function CandidatPage(){
             console.log(e)
         }
     }
-    console.log(candidat);
-    const handleChangeCandidat = (e,index,field)=>{
+    /*const handleChangeCandidat = (e,index,field)=>{
         if ( field !="pdp"){
             console.log(e.target.value, "index : " +index + " field : " +field);
             const newCandidat = [...candidat]
@@ -42,7 +44,12 @@ function CandidatPage(){
             newCandidat[index][field]= e.target.value
             setCandidat(newCandidat)
         }
-    }
+    }*/
+    const handleChangeCandidat = (e, index, field) => {
+        const newCandidats = [...candidat];
+        newCandidats[index] = { ...newCandidats[index], [field]: e.target.value };
+        setCandidat(newCandidats);
+    };
     return <Box>
         <Box display={"block"} margin={"auto"}>
             {
@@ -50,7 +57,7 @@ function CandidatPage(){
                     return   <CandidatCard key={++index} handleChangeCandidat={handleChangeCandidat} index={index}/> 
                 })
             }
-            {/* <Button type="submit" onCl>soummettre</Button> */}
+            <Button type="submit" onCl>soummettre</Button>
         </Box>
     </Box>
 }
