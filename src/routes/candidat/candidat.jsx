@@ -21,13 +21,16 @@ function CandidatPage(){
             // localStorage.removeItem("configScrutin")
         }
     },[])
-    //const [candidat,setCandidat] =useState()
     const [candidat,setCandidat]=useState(Array.from({length : configScrutin.nombreCandidat},(  )=>({pdp :"", nom: "",prenom: "",date : "" , profession :""})))
-    console.log(candidat);
+    console.log(configScrutin);
     const EnvoyerRequette =async ()=>{
         try{
             const response = await axios.post("http://localhost:8081/scrutin/creer",configScrutin)
+            const responseCandidat = await axios.post("http://localhost:8081/candidat/ajouter",candidat)
+
             if (response.data.status === "success") alert("scrutin bien enregistre")
+            if (responseCandidat.data.status === "success") alert("Candidat bien enregistre")
+            else alert("erreur lors de l'enregistrement candidat")
         }catch (e){
             console.log(e)
         }
@@ -57,7 +60,7 @@ function CandidatPage(){
                     return   <CandidatCard key={++index} handleChangeCandidat={handleChangeCandidat} index={index}/> 
                 })
             }
-            <Button type="submit" onCl>soummettre</Button>
+            <Button type="submit" onClick={EnvoyerRequette} sx={{width:"100%", backgroundColor:"blue"}}>soummettre</Button>
         </Box>
     </Box>
 }

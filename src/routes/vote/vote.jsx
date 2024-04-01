@@ -13,11 +13,11 @@ function Vote () {
         const [query,setQuery] = useState("")
         const FiltrerParNom = (query) =>{
             return data.filter((element)=>{
-                if(element.nomScrutin.toLowerCase().includes(query.toLowerCase()) /* || element.description.toLowerCase().includes(query.toLowerCase())*/) 
-                    return element 
-                else return null
+                //return element.nomScrutin.toLowerCase().includes(query.toLowerCase())? element: null
+                return element
             })
         }
+        console.log(data);
         return <Box>
             <NavBar/>    
             <Box width={"100%"} borderRadius={"10px"} height={"50px"} display={"flex"} justifyContent={"center"} alignItems={"center"} padding={"5px"} paddingTop={"100px"}>

@@ -23,11 +23,12 @@ export default function ScrutinComponent(){
         }
         fetchData();
     }, [param.id])
+    console.log(info)
     return <Box>
         <NavBar/>
         <Box paddingTop={"130px"}>
             <HeadRetour nom={info.nomScrutin || "election Presidentielle"} to="/vote"/>
-            <Box position={"relative"} width={"100%"} height={"500px"} objectFit={"cover"} marginBottom={"20px"} sx={{"@media screen and (max-width: 1200px)":{height:"auto",}}}>
+            <Box position={"relative"} width={"100%"} height={"500px"} objectfit={"cover"} marginBottom={"20px"} sx={{"@media screen and (max-width: 1200px)":{height:"auto",}}}>
                 <img src={info.pdc || "/assets/image/pdcVote.jpg"} alt="" width="100%" height="100%"/>
             </Box> 
             <Box 
