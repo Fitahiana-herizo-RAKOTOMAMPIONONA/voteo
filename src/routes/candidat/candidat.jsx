@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { CandidatCard } from "../../components/scrutinControllers/scrutinController";
 import axios from "axios";
 import {Button} from "@mui/material"
+import {useNavigate} from "react-router-dom"
 
 function CandidatPage(){
     const [configScrutin, setConfigScrutin]= useState({
@@ -18,18 +19,27 @@ function CandidatPage(){
     useEffect(()=>{
         if(localStorage.getItem("configScrutin")){
             setConfigScrutin(JSON.parse(localStorage.getItem("configScrutin")))
-            // localStorage.removeItem("configScrutin")
+            console.log(configScrutin);
         }
     },[])
-    const [candidat,setCandidat]=useState(Array.from({length : configScrutin.nombreCandidat},(  )=>({pdp :"", nom: "",prenom: "",date : "" , profession :""})))
     console.log(configScrutin);
+    const [candidat,setCandidat]=useState(Array.from({length : configScrutin.nombreCandidat},(  )=>({pdp :"", nom: "",prenom: "",date : "" , profession :""})))
     const EnvoyerRequette =async ()=>{
         try{
             const response = await axios.post("http://localhost:8081/scrutin/creer",configScrutin)
-            const responseCandidat = await axios.post("http://localhost:8081/candidat/ajouter",candidat)
+            if (response.data.status === "success"){
+                 alert(response.data)
+                const navigate = useNavigate()
+                navigate("/vote/details/")
 
-            if (response.data.status === "success") alert("scrutin bien enregistre")
-            if (responseCandidat.data.status === "success") alert("Candidat bien enregistre")
+            }
+            else alert("erreur lors de l'enregistrement scrutin")
+        }catch (e){
+            console.log(e)
+        }
+        try{
+            const responseCandidat = await axios.post("http://localhost:8081/candidat/ajouter",candidat)
+            if (responseCandidat.data.status === "success") alert(responseCandidat.data)
             else alert("erreur lors de l'enregistrement candidat")
         }catch (e){
             console.log(e)

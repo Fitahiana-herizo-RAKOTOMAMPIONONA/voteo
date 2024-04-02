@@ -13,8 +13,7 @@ function Vote () {
         const [query,setQuery] = useState("")
         const FiltrerParNom = (query) =>{
             return data.filter((element)=>{
-                //return element.nomScrutin.toLowerCase().includes(query.toLowerCase())? element: null
-                return element
+                return element.nomScrutin.toLowerCase().includes(query.toLowerCase())? element: null
             })
         }
         console.log(data);
