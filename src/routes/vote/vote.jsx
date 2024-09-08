@@ -37,6 +37,9 @@ function Vote () {
                 }}
             >
                 {
+                    FiltrerParNom(query).length==0? <Box>
+                        Auccun evenement pour le moment
+                    </Box>:
                     FiltrerParNom(query).map((value, index)=>{
                         return<VoteComponent
                                     key={index}
