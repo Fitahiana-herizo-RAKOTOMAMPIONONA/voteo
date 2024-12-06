@@ -16,7 +16,7 @@ export default function Apropos(){
         slideInRight(".input2")
         slideInRight(".input3")
     },[])
-    return <Box >
+    return <Box > 
         <NavBar/>
         <Box sx={{
             // NavBar fixe
